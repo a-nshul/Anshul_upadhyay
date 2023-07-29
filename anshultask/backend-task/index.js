@@ -97,39 +97,6 @@ app.get('/api/devices', async (req, res) => {
 });
 
 // Endpoint to update network settings
-// app.put('/api/update-config/:deviceId', async (req, res) => {
-//   const { deviceId } = req.params;
-//   console.log('deviceId:', deviceId);
-//   const { ssid, password, networkSettings } = req.body;
-
-//   // Validate the input data
-//   if (!ssid) {
-//     return res.status(400).json({ message: 'SSID is required for updating device configuration' });
-//   }
-
-//   try {
-//     // Use findOneAndUpdate with the query based on ssid
-//     const updatedDevice = await Device.findOneAndUpdate(
-//       { ssid },
-//       {
-//         $set: {
-//           password: password || undefined,
-//           networkSettings: networkSettings || undefined,
-//         },
-//       },
-//       { new: true } // Return the updated document
-//     ).exec();
-
-//     if (updatedDevice) {
-//       res.json({ message: 'Device configuration updated successfully', updatedDevice });
-//     } else {
-//       res.status(404).json({ message: 'Device not found' });
-//     }
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: 'Error updating device configuration' });
-//   }
-// });
 app.put('/api/update-config/:deviceId', async (req, res) => {
   const { deviceId } = req.params;
   console.log('deviceId:', deviceId);
