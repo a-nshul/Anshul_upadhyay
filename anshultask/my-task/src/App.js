@@ -35,62 +35,6 @@ const fetchDeviceInfo = async () => {
     setNetworkSettings(e.target.value);
   };
 
-
-  // const handleUpdateConfig = () => {
-  //   // if (!deviceId) {
-  //   //   message.error('Device ID is required.');
-  //   //   return;
-  //   // }
-
-  //   fetch(`http://localhost:3001/api/update-config/${deviceId}`, {
-  //     method: 'PUT', 
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       ssid,
-  //       password,
-  //       networkSettings,
-  //     }),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log('Config updated successfully:', data);
-  //       message.success('Config updated successfully');
-  //       fetchDeviceInfo();
-  //     })
-  //     .catch((error) => console.error('Error updating config:', error));
-  // };
-  // const handleUpdateConfig = async () => {
-  //   try {
-  //     // Create a payload object with the updated configuration data
-  //     const payload = {
-  //       ssid: ssid,
-  //       password: password,
-  //       networkSettings: networkSettings,
-  //     };
-
-  //     // Make the PUT request to update the configuration
-  //     const response = await axios.put(`http://localhost:3001/api/update-config/${deviceId}`, payload);
-
-  //   // Handle the response and show a success message
-  //   if (response.data && response.data.updatedDevice) {
-  //     message.success(response.data.message);
-  //     // Optionally, you can update the deviceInfo state with the updated device data
-  //     setDeviceInfo(response.data.updatedDevice);
-  //   } else {
-  //     message.error(response.data.message || 'Error updating device configuration');
-  //   }
-  // } catch (error) {
-  //   console.error('Error updating device configuration:', error);
-  //   message.error('Error updating device configuration. Please check the console for more details.');
-  // }
-  // };
   const handleUpdateConfig = async () => {
     try {
       // Ensure ssid, password, and networkSettings variables are correctly set
@@ -135,11 +79,6 @@ const fetchDeviceInfo = async () => {
       </div>
       <div className="config-update">
         <h2>Update Configuration</h2>
-        {/* Input field for Device ID */}
-        {/* <div>
-          <label>Device ID:</label>
-          <input type="text" value={deviceId} onChange={handleDeviceIdChange} required />
-        </div> */}
         <div>
           <label>SSID:</label>
           <input type="text" value={ssid} onChange={handleSSIDChange} />
